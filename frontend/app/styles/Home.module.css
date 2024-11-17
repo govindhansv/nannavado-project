@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background-color: #000; /* Dark background */
+    position: relative;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .sunEmoji {
+    font-size: 5rem; /* Sun emoji size */
+    margin-top: 20px;
+  }
+  
+  .ray {
+    position: absolute;
+    width: 400px; /* Beam width */
+    height: 400px; /* Beam height */
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.7) 0%, rgba(255, 255, 0, 0) 80%);
+    border-radius: 50%; /* Make it circular */
+    pointer-events: none; /* Prevent ray from blocking mouse events */
+    transition: opacity 0.2s ease; /* Smooth appearance */
+  }
+  
+  .symbolContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .symbol {
+    font-size: 3rem; /* Symbol size */
+    visibility: hidden; /* Initially hidden */
+    transition: visibility 0.2s ease; /* Smooth transition for visibility */
+    position: relative; /* For hover effect */
+  }
+  
+  /* Show symbols when mouse hovers over them */
+  .symbol:hover {
+    visibility: visible; /* Show on hover */
+  }
+  
+  /* Show symbols when mouse hovers over the container */
+  .symbolContainer:hover .symbol {
+    visibility: visible; /* Show when symbol is hovered */
+  }
+  
